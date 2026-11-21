@@ -2,7 +2,7 @@
 layout: runbook
 title: 'Two date failures in ticket 4471'
 owner: correasebastian
-status: triaged
+status: closed
 reviewed: '2026-11-21'
 signature: 'correasebastian'
 ---
@@ -15,15 +15,15 @@ signature: 'correasebastian'
 
 The desk merged reports with similar subjects. To route a new report, look up the tenant’s locale and booking form, then check which channel received the date. Intake tags describe the browser’s initial guess.
 
-## Where to file a report
+## Engineering disposition · October 5
 
-[Shared parser, issue 1](https://github.com/correasebastian/mega-what-it-shows/issues/1). The shared parser reads a day-first date as month first. Report R-41200 describes an April 7 reminder sent on July 4.
+[Shared parser, issue 1](https://github.com/correasebastian/mega-what-it-shows/issues/1). Engineering fixed DD/MM parsing for EU locales. The shared parser previously read a day-first date as month first. Report R-41200 describes an April 7 reminder sent on July 4.
 
-[Booking-v3 hint, issue 2](https://github.com/correasebastian/mega-what-it-shows/issues/2). The booking-v3 form shows MM/DD/YYYY to day-first tenants and interprets the entry in local order. Report R-41230 came through that form and received a parser tag at intake.
+[Booking-v3 hint, issue 2](https://github.com/correasebastian/mega-what-it-shows/issues/2). Engineering retired the booking-v3 form and closed the hint issue as won’t fix. The form showed MM/DD/YYYY to day-first tenants and interpreted the entry in local order. Report R-41230 came through that form and received a parser tag at intake.
 
 ## Report counts
 
-The table counts distinct report IDs merged into ticket 4471. Its ticket column describes the original desk export. Use the two linked issues for follow-up. The one-day-move notes remain in their tenant-assigned group pending investigation.
+The table counts distinct report IDs merged into ticket 4471. Its ticket column describes the original desk export. The linked issues record engineering’s final dispositions. The one-day-move notes remain in their tenant-assigned group pending investigation.
 
 <CauseTable ticket={4471} />
 
